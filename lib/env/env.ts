@@ -15,7 +15,8 @@ export async function mustEnv() {
     // More information: Get CWID from your study buddy.
     CWID: loadedEnv.CWID,
   };
-  for (const [key, value] of Object.entries(resultEnv)) {
+  for (const key in resultEnv) {
+    const value = resultEnv[key as keyof typeof resultEnv];
     if (value === undefined) {
       throw new Error(`Environment variable ${key} is not set.`);
     }

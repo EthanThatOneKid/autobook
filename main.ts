@@ -1,4 +1,4 @@
-import { type Page, puppeteer } from "auto-book/deps.ts";
+import { delay, type Page, puppeteer, SECOND } from "auto-book/deps.ts";
 import { type Env, mustEnv } from "auto-book/lib/env/mod.ts";
 import { $, URLs } from "auto-book/lib/booking/mod.ts";
 
@@ -10,9 +10,9 @@ async function main() {
   const env = await mustEnv();
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-  await login(page, env);
+  await login(page, env).catch(console.error);
   // TODO: Check if max bookings reached.
-  await book(page, env);
+  await book(page, env).catch(console.error);
   // TODO: Complete booking.
   // await browser.close();
 }
@@ -23,13 +23,16 @@ async function login(page: Page, env: Env) {
   await page.type($.login.username, env.CSUF_USERNAME);
   await page.type($.login.password, env.CSUF_PASSWORD);
   await page.click($.login.submit);
-  await page.waitForNavigation();
+  await page.waitForNavigation({ waitUntil: "load" });
+  // await delay(3 * SECOND);
 }
 
 async function book(page: Page, env: Env) {
-  await page.waitForSelector($.book.numberOfStudents);
-  await page.type($.book.numberOfStudents, env.NUMBER_OF_STUDENTS);
-  await page.type($.book.additionalValidCWID, env.CWID);
+  // await page.waitForSelector($.booking.numberOfStudents);
+  await page.type($.booking.numberOfStudents, env.NUMBER_OF_STUDENTS).catch(
+    console.error,
+  );
+  await page.type($.booking.additionalValidCWID, env.CWID).catch(console.error);
   // TODO: Complete booking.
   // TODO: Determine date and time for booking.
   // await page.type($.book.date, );
