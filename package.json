@@ -1,0 +1,27 @@
+{
+  "name": "auto-book",
+  "version": "1.0.0",
+  "description": "Book library rooms at CSUF automatically.",
+  "main": "index.js",
+  "module": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EthanThatOneKid/auto-book.git"
+  },
+  "keywords": [],
+  "author": "EthanThatOneKid",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/EthanThatOneKid/auto-book/issues"
+  },
+  "homepage": "https://github.com/EthanThatOneKid/auto-book#readme",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
