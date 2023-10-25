@@ -6,8 +6,8 @@
   "module": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "npm run build && npm run ./dist/main.js"
+    "start": "tsx ./main.ts",
+    "preinstall": "npx playwright install"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,11 @@
   "homepage": "https://github.com/EthanThatOneKid/auto-book#readme",
   "dependencies": {
     "dotenv": "^16.3.1",
-    "esm": "^3.2.25",
     "playwright": "^1.39.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.8",
+    "tsx": "^3.14.0",
     "typescript": "^5.2.2"
   }
 }

@@ -1,5 +1,5 @@
-import { chromium } from "playwright";
-import { $, URLs } from "auto-book/lib/bookings";
+import { chromium, type Page } from "playwright";
+import { $, URLs } from "auto-book/lib/bookings/index.js";
 import "dotenv/config";
 
 await main();
@@ -7,22 +7,21 @@ await main();
 async function main() {
   const browser = await chromium.launch({ headless: false });
   const page = await browser.newPage();
-  await login(page, env).catch(console.error);
+  await login(page).catch(console.error);
   // TODO: Check if max bookings reached.
-  await book(page, env).catch(console.error);
+  // await book(page, env).catch(console.error);
   // TODO: Complete booking.
   // await browser.close();
 }
 
-// async function login(page: Page, env: Env) {
-//   await page.goto(URLs.login);
-//   await page.waitForSelector($.login.username);
-//   await page.type($.login.username, env.CSUF_USERNAME);
-//   await page.type($.login.password, env.CSUF_PASSWORD);
-//   await page.click($.login.submit);
-//   await page.waitForNavigation({ waitUntil: "load" });
-//   // await delay(3 * SECOND);
-// }
+async function login(page: Page) {
+  await page.goto(URLs.login);
+  await page.waitForSelector($.login.username);
+  await page.fill($.login.username, process.env.CSUF_USERNAME);
+  await page.fill($.login.password, process.env.CSUF_PASSWORD);
+  await page.click($.login.submit);
+  await page.waitForLoadState("domcontentloaded");
+}
 
 // async function book(page: Page, env: Env) {
 //   // await page.waitForSelector($.booking.numberOfStudents);

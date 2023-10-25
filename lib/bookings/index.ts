@@ -1,2 +1,2 @@
-export * from "./urls.ts";
-export * from "./selectors.ts";
+export * from "./urls.js";
+export * from "./selectors.js";
