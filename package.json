@@ -2,13 +2,12 @@
   "name": "auto-book",
   "version": "1.0.0",
   "description": "Book library rooms at CSUF automatically.",
-  "main": "index.js",
-  "module": "main.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "type": "module",
+  "module": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "npm run build && npm run ./dist/main.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +21,12 @@
   },
   "homepage": "https://github.com/EthanThatOneKid/auto-book#readme",
   "dependencies": {
-    "esm": "^3.2.25"
+    "dotenv": "^16.3.1",
+    "esm": "^3.2.25",
+    "playwright": "^1.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.8",
+    "typescript": "^5.2.2"
   }
 }
