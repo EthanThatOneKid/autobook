@@ -1,7 +1,14 @@
 /**
- * $ contains all the selectors for auto-book.
+ * urls is a map of the URLs in auto-book.
  */
-export const $ = {
+export const urls = {
+  login: "https://titans.service-now.com/library/library_catalog.do",
+} as const;
+
+/**
+ * selectors contains all the selectors for auto-book.
+ */
+export const selectors = {
   login: {
     username: "#user_name",
     password: "#user_password",
