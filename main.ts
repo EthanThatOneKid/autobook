@@ -1,36 +1,37 @@
-import { chromium, type Page } from "playwright";
-import { $, URLs } from "auto-book/lib/bookings/index.js";
-import "dotenv/config";
+import { load } from "autobook/deps.ts";
+import { autobook } from "autobook/lib/autobook/mod.ts";
 
-await main();
+if (import.meta.main) {
+  await load({ export: true });
+  await main();
+}
 
 async function main() {
-  const browser = await chromium.launch({ headless: false });
-  const page = await browser.newPage();
-  await login(page).catch(console.error);
-  // TODO: Check if max bookings reached.
-  // await book(page, env).catch(console.error);
-  // TODO: Complete booking.
-  // await browser.close();
-}
+  const username = Deno.env.get("CSUF_USERNAME");
+  if (!username) {
+    throw new Error("CSUF_USERNAME is not set.");
+  }
 
-async function login(page: Page) {
-  await page.goto(URLs.login);
-  await page.waitForSelector($.login.username);
-  await page.fill($.login.username, process.env.CSUF_USERNAME);
-  await page.fill($.login.password, process.env.CSUF_PASSWORD);
-  await page.click($.login.submit);
-  await page.waitForLoadState("domcontentloaded");
-}
+  const password = Deno.env.get("CSUF_PASSWORD");
+  if (!password) {
+    throw new Error("CSUF_PASSWORD is not set.");
+  }
 
-// async function book(page: Page, env: Env) {
-//   // await page.waitForSelector($.booking.numberOfStudents);
-//   await page
-//     .type($.booking.numberOfStudents, env.NUMBER_OF_STUDENTS)
-//     .catch(console.error);
-//   await page.type($.booking.additionalValidCWID, env.CWID).catch(console.error);
-//   // TODO: Complete booking.
-//   // TODO: Determine date and time for booking.
-//   // await page.type($.book.date, );
-//   // await page.select($.book.time, );
-// }
+  const additionalValidCWID = Deno.env.get("CSUF_CWID");
+  if (!additionalValidCWID) {
+    throw new Error("CSUF_CWID is not set.");
+  }
+
+  const numberOfStudentsString = Deno.env.get("CSUF_NUMBER_OF_STUDENTS");
+  if (!numberOfStudentsString) {
+    throw new Error("CSUF_NUMBER_OF_STUDENTS is not set.");
+  }
+
+  const numberOfStudents = parseInt(numberOfStudentsString);
+  await autobook({
+    username,
+    password,
+    additionalValidCWID,
+    numberOfStudents,
+  });
+}

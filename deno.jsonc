@@ -1,7 +1,11 @@
 {
   "lock": "./deno.lock",
+  "compilerOptions": {
+    "lib": ["deno.window", "dom"]
+  },
   "tasks": {
     "start": "deno run -A main.ts",
+    "start:r": "deno run -Ar main.ts",
     "udd": "deno run -r --allow-read=. --allow-write=. --allow-net https://deno.land/x/udd/main.ts deps.ts && deno task lock",
     "lock": "deno cache --lock=deno.lock --lock-write deps.ts",
     "all": "deno task udd && deno lint && deno fmt"

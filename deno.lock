@@ -86,6 +86,7 @@
     "https://deno.land/std@0.205.0/path/windows/separator.ts": "ae21f27015f10510ed1ac4a0ba9c4c9c967cbdd9d9e776a3e4967553c397bd5d",
     "https://deno.land/std@0.205.0/path/windows/to_file_url.ts": "8e9ea9e1ff364aa06fa72999204229952d0a279dbb876b7b838b2b2fea55cce3",
     "https://deno.land/std@0.205.0/path/windows/to_namespaced_path.ts": "e0f4d4a5e77f28a5708c1a33ff24360f35637ba6d8f103d19661255ef7bfd50d",
+    "https://deno.land/std@0.206.0/dotenv/mod.ts": "039468f5c87d39b69d7ca6c3d68ebca82f206ec0ff5e011d48205eea292ea5a6",
     "https://deno.land/x/astral@0.3.1/bindings/celestial.ts": "cd00b4a4af9c5860848251b5a4d69e5af48e3dfdce47bc07644874b74cdb03b8",
     "https://deno.land/x/astral@0.3.1/mod.ts": "c07ced6f4434b839ff4ab90e7eec00da31e31c593ae8938f37a9e87e217f16d4",
     "https://deno.land/x/astral@0.3.1/src/browser.ts": "8db2f3e8d3869bccdadecf6a75f578d509ca30caa2abf833d97c97ced5be1523",
