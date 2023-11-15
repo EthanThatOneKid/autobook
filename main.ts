@@ -3,7 +3,12 @@ import { autobook } from "autobook/lib/autobook/mod.ts";
 
 if (import.meta.main) {
   await load({ export: true });
-  await main();
+  await main()
+    .then(() => Deno.exit(0))
+    .catch((error) => {
+      console.error(error);
+      Deno.exit(1);
+    });
 }
 
 async function main() {

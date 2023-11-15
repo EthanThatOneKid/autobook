@@ -47,7 +47,8 @@ export async function autobook(options: AutobookOptions) {
   // TODO: Check if max bookings reached.
   // await book(page, env).catch(console.error);
   // TODO: Complete booking.
-  // await browser.close();
+
+  await browser.close();
 }
 
 interface LoginEvaluateOptions {
