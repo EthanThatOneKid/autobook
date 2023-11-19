@@ -1,5 +1,8 @@
 {
   "version": "3",
+  "redirects": {
+    "https://github.com/lino-levan/astral/raw/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/mod.ts": "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/mod.ts"
+  },
   "remote": {
     "https://deno.land/std@0.162.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.162.0/bytes/bytes_list.ts": "aba5e2369e77d426b10af1de0dcc4531acecec27f9b9056f4f7bfbf8ac147ab4",
@@ -86,19 +89,7 @@
     "https://deno.land/std@0.205.0/path/windows/separator.ts": "ae21f27015f10510ed1ac4a0ba9c4c9c967cbdd9d9e776a3e4967553c397bd5d",
     "https://deno.land/std@0.205.0/path/windows/to_file_url.ts": "8e9ea9e1ff364aa06fa72999204229952d0a279dbb876b7b838b2b2fea55cce3",
     "https://deno.land/std@0.205.0/path/windows/to_namespaced_path.ts": "e0f4d4a5e77f28a5708c1a33ff24360f35637ba6d8f103d19661255ef7bfd50d",
-    "https://deno.land/std@0.206.0/dotenv/mod.ts": "039468f5c87d39b69d7ca6c3d68ebca82f206ec0ff5e011d48205eea292ea5a6",
-    "https://deno.land/x/astral@0.3.1/bindings/celestial.ts": "cd00b4a4af9c5860848251b5a4d69e5af48e3dfdce47bc07644874b74cdb03b8",
-    "https://deno.land/x/astral@0.3.1/mod.ts": "c07ced6f4434b839ff4ab90e7eec00da31e31c593ae8938f37a9e87e217f16d4",
-    "https://deno.land/x/astral@0.3.1/src/browser.ts": "8db2f3e8d3869bccdadecf6a75f578d509ca30caa2abf833d97c97ced5be1523",
-    "https://deno.land/x/astral@0.3.1/src/cache.ts": "836e30452ee7010d21d0f3f83aa7e727500819a55ea8877195a8af15bd4449b9",
-    "https://deno.land/x/astral@0.3.1/src/dialog.ts": "2b198b672d88c14ca33ee70d8f959a91ccc70375b71c4bc16b1a24bbdc6396d7",
-    "https://deno.land/x/astral@0.3.1/src/element_handle.ts": "570cafd09b49ae134cd8d5cc5fe68d1e998ae5ca85ba12b7c0663bfa19744131",
-    "https://deno.land/x/astral@0.3.1/src/file_chooser.ts": "a17718a6ece537e4b5e7f13cf9193cd7543be4525c158db102f2cac0e2f5bfb6",
-    "https://deno.land/x/astral@0.3.1/src/keyboard.ts": "84b65bd9ae7594c61a7f7952857d70caa0f3d60250da989fce31c54390cb8f53",
-    "https://deno.land/x/astral@0.3.1/src/mouse.ts": "9d3eb409afea003a54ceb42f29b61ec56854c7528c5761a494ea8b095ae8af8d",
-    "https://deno.land/x/astral@0.3.1/src/page.ts": "001a08f189c6572b36a4be7af2b5792c1ed1bc5ef2a0cf4d84e9920d3b31c3f6",
-    "https://deno.land/x/astral@0.3.1/src/touchscreen.ts": "ceca95f3a790ea71505d79bae51c4300d4b6424af2b41f4012270f955a892500",
-    "https://deno.land/x/astral@0.3.1/src/util.ts": "e32359a77fc3da18d014662af1c275c10fdadbac36b35c6dcb28f83c33ddbfdc",
+    "https://deno.land/std@0.207.0/dotenv/mod.ts": "039468f5c87d39b69d7ca6c3d68ebca82f206ec0ff5e011d48205eea292ea5a6",
     "https://deno.land/x/dir@1.5.2/cache_dir/mod.ts": "8a82889db79c547fbbd3536c9c964047657b19fb59365c5fa59afc46082f9fe5",
     "https://deno.land/x/progress@v1.3.9/deps.ts": "83050e627263931d853ba28b7c15c80bf4be912bea7e0d3d13da2bc0aaf7889d",
     "https://deno.land/x/progress@v1.3.9/mod.ts": "ca14ba3c56fc5991c4beee622faeb882e59db8f28d4f5e529ac17b7b07d55741",
@@ -132,6 +123,18 @@
     "https://deno.land/x/zipjs@v2.7.29/lib/core/zip-reader.js": "c918875362d7e46fc690cea0b3f81e50a0ec0b6e20f6ae35e5982de73ae45449",
     "https://deno.land/x/zipjs@v2.7.29/lib/core/zip-writer.js": "b78c099828ec3134983c259adc4d6118fbfda7f033a7e95de8176a470e9a5a54",
     "https://deno.land/x/zipjs@v2.7.29/lib/z-worker-inline.js": "a38bbe15eb011daee291b8243c3101b197aa91dcd786f1c04251bd1dda5c33e7",
-    "https://deno.land/x/zipjs@v2.7.29/lib/zip-fs.js": "a733360302f5fbec9cc01543cb9fcfe7bae3f35a50d0006626ce42fe8183b63f"
+    "https://deno.land/x/zipjs@v2.7.29/lib/zip-fs.js": "a733360302f5fbec9cc01543cb9fcfe7bae3f35a50d0006626ce42fe8183b63f",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/bindings/celestial.ts": "637f41276b9b344f57dc7443b287b4277ef4bd71fc9db17b8a0636fae448e996",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/mod.ts": "c07ced6f4434b839ff4ab90e7eec00da31e31c593ae8938f37a9e87e217f16d4",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/browser.ts": "daf3bb073910264a207503282a26a4151f7ea7eb05abbf1c7ca46e9f419a2688",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/cache.ts": "306de10c8173185462979465493e667e04727d42ccc34edd524c34aca35a5e16",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/dialog.ts": "2b198b672d88c14ca33ee70d8f959a91ccc70375b71c4bc16b1a24bbdc6396d7",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/element_handle.ts": "c6fb327e4ecf482568feb7ce0450b45eca6d7da2d829f61061dbd6bea8b3a9ad",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/file_chooser.ts": "a17718a6ece537e4b5e7f13cf9193cd7543be4525c158db102f2cac0e2f5bfb6",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/keyboard.ts": "84b65bd9ae7594c61a7f7952857d70caa0f3d60250da989fce31c54390cb8f53",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/mouse.ts": "9d3eb409afea003a54ceb42f29b61ec56854c7528c5761a494ea8b095ae8af8d",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/page.ts": "6d3fae3f92148b15dea052d8cabcf5ca3a9e82d6b4e0e4e695a7d72de4125e4f",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/touchscreen.ts": "ceca95f3a790ea71505d79bae51c4300d4b6424af2b41f4012270f955a892500",
+    "https://raw.githubusercontent.com/lino-levan/astral/adb448b8d8f9d14f79ff285790e91f6c81e6c8c2/src/util.ts": "e32359a77fc3da18d014662af1c275c10fdadbac36b35c6dcb28f83c33ddbfdc"
   }
 }
