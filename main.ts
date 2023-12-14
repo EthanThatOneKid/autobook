@@ -1,37 +1,42 @@
-import { type Page, puppeteer } from "auto-book/deps.ts";
-import { type Env, mustEnv } from "auto-book/lib/env/mod.ts";
-import { $, URLs } from "auto-book/lib/booking/mod.ts";
+import { load } from "autobook/deps.ts";
+import { autobook } from "autobook/lib/autobook/mod.ts";
 
 if (import.meta.main) {
-  await main();
+  await load({ export: true });
+  await main()
+    .then(() => Deno.exit(0))
+    .catch((error) => {
+      console.error(error);
+      Deno.exit(1);
+    });
 }
 
 async function main() {
-  const env = await mustEnv();
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
-  await login(page, env);
-  // TODO: Check if max bookings reached.
-  await book(page, env);
-  // TODO: Complete booking.
-  // await browser.close();
-}
+  const username = Deno.env.get("CSUF_USERNAME");
+  if (!username) {
+    throw new Error("CSUF_USERNAME is not set.");
+  }
 
-async function login(page: Page, env: Env) {
-  await page.goto(URLs.login);
-  await page.waitForSelector($.login.username);
-  await page.type($.login.username, env.CSUF_USERNAME);
-  await page.type($.login.password, env.CSUF_PASSWORD);
-  await page.click($.login.submit);
-  await page.waitForNavigation();
-}
+  const password = Deno.env.get("CSUF_PASSWORD");
+  if (!password) {
+    throw new Error("CSUF_PASSWORD is not set.");
+  }
 
-async function book(page: Page, env: Env) {
-  await page.waitForSelector($.book.numberOfStudents);
-  await page.type($.book.numberOfStudents, env.NUMBER_OF_STUDENTS);
-  await page.type($.book.additionalValidCWID, env.CWID);
-  // TODO: Complete booking.
-  // TODO: Determine date and time for booking.
-  // await page.type($.book.date, );
-  // await page.select($.book.time, );
+  const additionalValidCWID = Deno.env.get("CSUF_CWID");
+  if (!additionalValidCWID) {
+    throw new Error("CSUF_CWID is not set.");
+  }
+
+  const numberOfStudentsString = Deno.env.get("CSUF_NUMBER_OF_STUDENTS");
+  if (!numberOfStudentsString) {
+    throw new Error("CSUF_NUMBER_OF_STUDENTS is not set.");
+  }
+
+  const numberOfStudents = parseInt(numberOfStudentsString);
+  await autobook({
+    username,
+    password,
+    additionalValidCWID,
+    numberOfStudents,
+  });
 }
